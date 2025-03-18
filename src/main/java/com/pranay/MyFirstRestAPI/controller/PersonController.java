@@ -30,15 +30,16 @@ public class PersonController
         return personList;
     }
 
+    // http://localhost:8080/person/2
     @GetMapping("/person/{id}")
-    public Person getPersonById(@PathVariable("id")Long id)
+    public Person getPersonById(@PathVariable("id")Long myId)
     {
 
         Person person = null;
 
         for(Person target : personList)
         {
-            if(Objects.equals(target.getPersonId(), id))
+            if(Objects.equals(target.getPersonId(), myId))
             {
                 person = target;
                 break;
